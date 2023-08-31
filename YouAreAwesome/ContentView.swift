@@ -8,16 +8,52 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var messageString = "When the Genius Bar needs help, the call you!"
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(messageString)
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.red)
+                .frame(height: 150)
+                .frame(maxWidth: .infinity)
+                .border(.orange, width: 1)
+                .padding()
+            
+            // First Button
+            HStack {
+                Button("Awesome") {
+                    // This is the action perfromed when the button is pressed
+                    messageString = "You Are Awesome!"
+                }
+                .buttonStyle(.borderedProminent)
+                
+                // Second Button
+                Button("Great") {
+                    messageString = "You Are Great!"
+                }
+                .buttonStyle(.borderedProminent)
+            }
+            .border(.purple, width: 5)
         }
-        .padding()
     }
+        
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
