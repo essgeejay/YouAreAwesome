@@ -23,8 +23,9 @@ struct ContentView: View {
                 .border(.orange, width: 1)
                 .padding()
             
-            // First Button
+            
             HStack {
+                // First Button
                 Button("Awesome") {
                     // This is the action perfromed when the button is pressed
                     messageString = "You Are Awesome!"
