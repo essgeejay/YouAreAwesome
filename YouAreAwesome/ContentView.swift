@@ -8,29 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var messageString = "When the genius bar needs help, they call you!"
+    @State private var messageString = "Namaste"
     
     @State private var someText = "nothing text"
     
     var body: some View {
         
         VStack {
-            
-            Group {
-                Text(someText)
-                Text("I am textView!")
-                Text("I am textView!")
-                Text("I am textView!")
-                Text("I am textView!")
-                Text("I am textView!")
-                Text("I am textView!")
-            }
-            .font(.title)
-            .fontWeight(.heavy)
-            
-            
-            
             Spacer()
+            
+            Image(systemName: "figure.mind.and.body")
+                .resizable()
+                .scaledToFill()
+                .foregroundColor(.pink)
+                .border(.pink)
+                .frame(width: 200, height: 300)
+                .clipped()
+                .border(.green)
+            
+//            Spacer()
             
             Text(messageString)
                 .font(.largeTitle)
@@ -40,8 +36,8 @@ struct ContentView: View {
                 .foregroundColor(.red)
                 .frame(height: 150)
                 .frame(maxWidth: .infinity)
-            //                .border(.orange, width: 1)
                 .padding()
+                .border(.blue)
             
             Spacer()
             
@@ -61,11 +57,7 @@ struct ContentView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
-            //            .border(.purple, width: 5)
-            
             .padding()
-            //            .background(.purple)
-            //            .tint(Color("Vermillion"))
         }
     }
 }
