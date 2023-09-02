@@ -8,28 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var messageString = "Namaste"
+    @State private var messageString = ""
+    
+    @State private var messageString2 = "You Are Great!"
     
     @State private var someText = "nothing text"
     
     var body: some View {
         
         VStack {
-            Spacer()
             
-            Image(systemName: "speaker.wave.3", variableValue: 0.68)
-                .resizable()
-                .scaledToFit()
-                .symbolRenderingMode(.multicolor)
-                .padding()
-                .background(Color(hue: 0.523, saturation: 0.851, brightness: 0.948))
-                .cornerRadius(30)
-                .shadow(color: .gray, radius: 30, x: 20, y: 20)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 30)
-                        .stroke(.teal, lineWidth: 1)
-                )
-                .padding()
+            Spacer()
             
             Text(messageString)
                 .font(.largeTitle)
@@ -43,26 +32,25 @@ struct ContentView: View {
             
             Spacer()
             
-            HStack {
-                // First Button
-                Button("Awesome") {
-                    // This is the action perfromed when the button is pressed
-                    messageString = "You Are Awesome!"
-                }
-                .buttonStyle(.borderedProminent)
+            Button("Show Message") {
                 
-                Spacer()
+                let messageString01 = "You Are Awesome"
+                let messageString02 = "You Are Great"
                 
-                // Second Button
-                Button("Great") {
-                    messageString = "You Are Great!"
+                // This is the action perfromed when the button is pressed
+                if messageString == messageString01 {
+                    messageString = messageString02
+                } else {
+                    messageString = messageString01
                 }
-                .buttonStyle(.borderedProminent)
+
             }
-            .padding()
+            .buttonStyle(.borderedProminent)
+            
         }
     }
 }
+
 
 
 
