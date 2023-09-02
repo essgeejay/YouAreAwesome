@@ -17,14 +17,13 @@ struct ContentView: View {
         VStack {
             Spacer()
             
-            Image(systemName: "figure.mind.and.body")
+            Image(systemName: "cloud.sun.rain.fill")
                 .resizable()
-                .scaledToFill()
-                .foregroundColor(.pink)
-                .border(.pink)
-                .frame(width: 200, height: 300)
-                .clipped()
-                .border(.green)
+                .scaledToFit()
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(.gray, .orange, .blue)
+//                .foregroundColor(.orange)
+                .padding()
             
 //            Spacer()
             
@@ -37,7 +36,6 @@ struct ContentView: View {
                 .frame(height: 150)
                 .frame(maxWidth: .infinity)
                 .padding()
-                .border(.blue)
             
             Spacer()
             
