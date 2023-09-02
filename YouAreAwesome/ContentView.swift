@@ -17,15 +17,19 @@ struct ContentView: View {
         VStack {
             Spacer()
             
-            Image(systemName: "cloud.sun.rain.fill")
+            Image(systemName: "speaker.wave.3", variableValue: 0.68)
                 .resizable()
                 .scaledToFit()
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(.gray, .orange, .blue)
-//                .foregroundColor(.orange)
+                .symbolRenderingMode(.multicolor)
                 .padding()
-            
-//            Spacer()
+                .background(Color(hue: 0.523, saturation: 0.851, brightness: 0.948))
+                .cornerRadius(30)
+                .shadow(color: .gray, radius: 30, x: 20, y: 20)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(.teal, lineWidth: 1)
+                )
+                .padding()
             
             Text(messageString)
                 .font(.largeTitle)
