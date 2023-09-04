@@ -37,12 +37,15 @@ struct ContentView: View {
                 let messageString01 = "You Are Awesome"
                 let messageString02 = "You Are Great"
                 
-                // This is the action perfromed when the button is pressed
-                if messageString == messageString01 {
-                    messageString = messageString02
-                } else {
-                    messageString = messageString01
-                }
+//                // This is the action perfromed when the button is pressed
+//                if messageString == messageString01 {
+//                    messageString = messageString02
+//                } else {
+//                    messageString = messageString01
+//                }
+                
+                // Adding a tenary operator ? need to know more
+                messageString = (messageString == messageString01 ? messageString02 : messageString01)
 
             }
             .buttonStyle(.borderedProminent)
